@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, intitial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Responsive Comming Soon Page</title>
+	<link rel="stylesheet"  href="comming_ soon.css">
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Brand Name</a>
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<img src="wave.png" width="700" height="700" class="wave">
+		<div class="contantBx">
+			<h2>Comming Soon!</h2>
+			<p>Due to maintainance problem we are unable to show the page<br>
+			.So you are requested to seat tight <br>.The very new page is Comming Soon.</p>
+			<div class="countdown">
+			<div class="time"><div id="day">20</div><span>Days</span></div>
+			<div class="time"><div id="hour">10</div><span>Hour</span></div>
+			<div class="time"><div id="minute">30</div><span>Minute</span></div>
+			<div class="time"><div id="second">16</div><span>Second</span></div>
+		  </div>
+		  <a href="#" onclick="toggle();">Notify Me</a>
+		</div>
+		<div class="imgBx">
+			<img src="man.png" width="600" height="400">
+		</div>
+		<ul class="sci">
+			<li><a href="#"><img src="f.jfif" width="30" height="30"></a></li>
+			<li><a href="#"><img src="i.jfif" width="30" height="30"></a></li>
+			<li><a href="#"><img src="t.jfif" width="30" height="30"></a></li>
+			
+		</ul>
+
+	</section>
+	<div class="newsletter">
+		<h2>Stay Tuned</h2>
+		<p>Get Notified at Launch</p>
+		<div class="inputBx">
+			<form>
+				<input type="email" name="" required="" placeholder="Enter Email Address">
+				<input type="submit" value="Submit">
+			</form>
+			
+		</div>
+		<img src="cross.jpg" width="20" height="20" class="close"  onclick="toggle();">
+	</div>
+
+	<script type="text/javascript">
+
+		function toggle(){
+			var newsletter = document.querySelector(".newsletter");
+			newsletter.classList.toggle("active");
+		}
+
+
+
+
+		var countDate = new Date("Jan 1, 2022 15:37:25").getTime();
+
+		function newYear(){
+		  var now = new Date().getTime();
+		  var gap = countDate - now;
+
+
+			 
+
+
+			  var d = Math.floor(gap / (1000 * 60 * 60 * 24));
+			  var h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+			  var s = Math.floor((gap % (1000 * 60)) / 1000);
+
+              document.getElementById("day").innerHTML = d;
+              document.getElementById("hour").innerHTML = h;
+              document.getElementById("minute").innerHTML = m;
+              document.getElementById("second").innerHTML = s;
+			    
+        }
+		
+        setInterval(function(){
+           newYear();
+        },1000)
+    </script>
+</body>
+</html>
